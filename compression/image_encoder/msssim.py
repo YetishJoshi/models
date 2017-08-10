@@ -198,9 +198,9 @@ def main(_):
     print('\nCannot find --compared_image.\n')
     return
 
-  with tf.gfile.FastGFile(FLAGS.original_image) as image_file:
+  with tf.gfile.FastGFile(FLAGS.original_image, mode='rb') as image_file:
     img1_str = image_file.read()
-  with tf.gfile.FastGFile(FLAGS.compared_image) as image_file:
+  with tf.gfile.FastGFile(FLAGS.compared_image mode='rb') as image_file:
     img2_str = image_file.read()
 
   input_img = tf.placeholder(tf.string)
